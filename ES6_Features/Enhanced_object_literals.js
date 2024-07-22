@@ -10,4 +10,5 @@ const person = {
     },
 };
 
+
 person.greet();
