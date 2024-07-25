@@ -1,0 +1,2 @@
+//1. REPL (Read-Eval-Print Loop)
+// REPL is an interactive programming environment that takes single user inputs (i.e., reads a line of code), evaluates them, and returns the result to the user. This is commonly used in Node.js for JavaScript.
