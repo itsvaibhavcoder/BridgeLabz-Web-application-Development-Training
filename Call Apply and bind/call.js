@@ -3,7 +3,7 @@
 let person1 = {
     firstName : "Shankar",
     secondName : "Ganesh",
-    printFullName : function(){
+    printFullName (){
         console.log(`${this.firstName} ${this.secondName}
             `)
     }
