@@ -98,7 +98,8 @@ let person = {
       console.log(`Hello, my name is ${this.name}`);
     }
 };
-  
+
+
 person.greet(); // Output: Hello, my name is Alice
 
 // 8. Nested Objects
@@ -122,7 +123,7 @@ let person = {
     name: 'Alice',
     age: 25,
     isStudent: true
-  };
+};
   
 let { name, age } = person;
 console.log(name); // Output: Alice
@@ -139,5 +140,5 @@ console.log(personCopy); // Output: { name: 'Alice', age: 25, isStudent: true }
 let { name2, ...rest } = personCopy;
 console.log(name2); // Output: Alice
 console.log(rest); // Output: { age: 25, isStudent: true }
-  
+
   
