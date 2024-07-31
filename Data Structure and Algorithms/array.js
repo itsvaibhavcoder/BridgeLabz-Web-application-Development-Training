@@ -74,7 +74,7 @@ let fruits = ['banana', 'apple'];
 fruits.customProperty = 'I am a custom property';
 console.log(fruits.customProperty); // Output: I am a custom property
 
-// Arrays inherit from Array.prototype
+//Arrays inherit from Array.prototype
 console.log(Array.prototype.isPrototypeOf(fruits)); // Output: true
 
 
