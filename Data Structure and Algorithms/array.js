@@ -28,7 +28,7 @@ console.log(mixedArray[2].key);
 // pop(): Removes the last element from an array.
 // shift(): Removes the first element from an array.
 // unshift(): Adds one or more elements to the beginning of an array.
-// splice(): Adds/removes elements at a specific index.
+//splice(): Adds/removes elements at a specific index.
 
 // push
 fruits.push('peach');
