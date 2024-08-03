@@ -1,98 +1,92 @@
-//A singly linked list is a type of linked list where each node points to the next node in the sequence, and the last node points to null.
-class Node{
-    constructor(value) {
-        this.value = value;
+class Node {
+    constructor(val) {
+        this.data = val;
         this.next = null;
     }
 }
 
-class SinglyLinkedList{
-    constructor(){
+class LinkedList {
+    constructor() {
         this.head = null;
     }
-    //Method to add a node at the end
-    append(value){
-        const newNode = new Node(value);
-        if(!this.head){
+
+    insertAtTail(val) {
+        const newNode = new Node(val);
+        if (this.head === null) {
             this.head = newNode;
             return;
         }
-        let curr = this.head;
-        while(curr.next){
-            curr = curr.next;
+        
+        let temp = this.head;
+        while (temp.next !== null) {
+            temp = temp.next;
         }
-        curr.next = newNode;
+        temp.next = newNode;
     }
 
-    //Method to add a node at a specific position
-    insertAt(value, position){
-        const newNode = new Node(value);
-        if(position===0){
-            newNode.next = this.head;
-            this.head = newNode;
+    insertAtHead(val) {
+        const newNode = new Node(val);
+        newNode.next = this.head;
+        this.head = newNode;
+    }
+
+    displayLinkedList() {
+        let temp = this.head;
+        let result = '';
+        while (temp !== null) {
+            result += temp.data + ' ';
+            temp = temp.next;
+        }
+        console.log(result.trim());
+    }
+
+    deleteNode(pos) {
+        if (this.head === null) return;
+
+        if (pos === 1) {
+            const temp = this.head;
+            this.head = this.head.next;
+            temp.next = null;
             return;
         }
-        let curr = this.head;
-        let prev = null;
-        let index = 0;
-        while(index<position && curr){
-           prev = curr;
-           curr = curr.next;
-           index++; 
+
+        let current = this.head;
+        for (let i = 1; i < pos - 1 && current !== null; i++) {
+            current = current.next;
         }
-        if(curr){
-            prev.next = newNode;
-            newNode.next = curr;
-        }
-        else{
-            prev.next = newNode;
-        }
+
+        if (current === null || current.next === null) return;
+
+        const temp = current.next;
+        current.next = current.next.next;
+        temp.next = null;
     }
-    //Method to delete a node with a specific value
-    deleteValue(value){
-        if(!this.head) return;
-        if(this.head.value === value){
-           this.head = this.head.next;
-           return;
-        }
-        let curr = this.head;
-        let prev = null;
-        while(curr && curr.value !==value){
-            prev = curr;
-            curr = curr.next;
-        }
-        if(curr){
-            prev.next = curr.next;
-        }
-    }
-    
-    //Method to search for a node with a specific val
-    search(value){
-        let curr = this.head;
-        while(curr){
-            if(curr.value ===value){
+
+    search(val) {
+        let temp = this.head;
+        while (temp !== null) {
+            if (temp.data === val) {
                 return true;
             }
-            curr = curr.next;
+            temp = temp.next;
         }
         return false;
     }
-
-    //Method to print the list
-    printList() {
-        let current = this.head;
-        while (current) {
-            console.log(current.value);
-            current = current.next;
-        }
-    }
 }
 
-let list = new SinglyLinkedList();
-list.append(1);
-list.append(2);
-list.append(3);
-list.insertAt(4, 1);
-list.deleteValue(2);
-console.log(list.search(3));
-list.printList();
+
+const ll = new LinkedList();
+ll.insertAtTail(1);
+ll.insertAtTail(2);
+ll.insertAtTail(3);
+ll.insertAtHead(6);
+ll.displayLinkedList(); 
+ll.deleteNode(2);
+ll.displayLinkedList(); 
+console.log(ll.search(9));
+
+
+
+
+
+
