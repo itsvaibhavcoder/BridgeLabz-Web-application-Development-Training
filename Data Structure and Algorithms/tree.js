@@ -1,61 +1,111 @@
 //A tree is a hierarchical data structure consisting of nodes, where each node has a value and a list of references to its child nodes. The topmost node is called the root, and each node (except the root) has exactly one parent. Nodes with no children are called leaves.
 
+//Binary Tree Implimentation
 class TreeNode {
-    constructor(value) {
-      this.value = value;
-      this.children = [];
-    }
-    
-    addChild(childNode) {
-      this.children.push(childNode);
+    constructor(val) {
+        this.val = val;
+        this.left = null;
+        this.right = null;
     }
 }
 
-class Tree {
-    constructor(rootValue) {
-      this.root = new TreeNode(rootValue);
+class BinaryTree {
+    constructor() {
+        this.root = null;
     }
 
-    traverseDFS(node = this.root){
-        console.log(node.value);
-        for(let child of node.children){
-            this.traverseDFS(child);
+    insert(val) {
+        this.root = this.insertRec(this.root, val);
+    }
+
+    insertRec(node, val) {
+        if (node === null) {
+            return new TreeNode(val);
+        }
+
+        if (val < node.val) {
+            node.left = this.insertRec(node.left, val);
+        } else if (val > node.val) {
+            node.right = this.insertRec(node.right, val);
+        }
+
+        return node;
+    }
+
+    inorder() {
+        this.inorderRec(this.root);
+    }
+
+    inorderRec(node) {
+        if (node !== null) {
+            this.inorderRec(node.left);
+            process.stdout.write(node.val + " ");
+            this.inorderRec(node.right);
         }
     }
 
-    traverseBFS(){
-        let queue = [this.root];
-        while(queue.length>0){
+    preorder() {
+        this.preorderRec(this.root);
+    }
+
+    preorderRec(node) {
+        if (node !== null) {
+            process.stdout.write(node.val + " ");
+            this.preorderRec(node.left);
+            this.preorderRec(node.right);
+        }
+    }
+
+    postorder() {
+        this.postorderRec(this.root);
+    }
+
+    postorderRec(node) {
+        if (node !== null) {
+            this.postorderRec(node.left);
+            this.postorderRec(node.right);
+            process.stdout.write(node.val + " ");
+        }
+    }
+
+    levelOrder() {
+        this.levelOrderRec(this.root);
+    }
+
+    levelOrderRec(root) {
+        if (root === null) return;
+
+        let queue = [];
+        queue.push(root);
+
+        while (queue.length > 0) {
             let node = queue.shift();
-            console.log(node.value);
-            for(let child of node.children)
-            {
-                queue.push(child);
-            }
+            process.stdout.write(node.val + " ");
+            if (node.left !== null) queue.push(node.left);
+            if (node.right !== null) queue.push(node.right);
         }
     }
 }
 
+//Usage
+let tree = new BinaryTree();
 
-// Create a new tree
-let tree = new Tree("root");
+tree.insert(50);
+tree.insert(30);
+tree.insert(20);
+tree.insert(40);
+tree.insert(70);
+tree.insert(60);
+tree.insert(80);
 
-// Add children to the root
-let child1 = new TreeNode("child1");
-let child2 = new TreeNode("child2");
-tree.root.addChild(child1);
-tree.root.addChild(child2);
+console.log("Inorder traversal:");
+tree.inorder();
 
-// Add grandchildren
-let grandchild1 = new TreeNode("grandchild1");
-let grandchild2 = new TreeNode("grandchild2");
-child1.addChild(grandchild1);
-child1.addChild(grandchild2);
+console.log("Preorder traversal:");
+tree.preorder();
 
-// Traverse the tree (DFS)
-console.log("DFS Traversal:");
-tree.traverseDFS();
+console.log("Postorder traversal:");
+tree.postorder();
 
-// Traverse the tree (BFS)
-console.log("BFS Traversal:");
-tree.traverseBFS();
+console.log("Level order traversal:");
+tree.levelOrder();
