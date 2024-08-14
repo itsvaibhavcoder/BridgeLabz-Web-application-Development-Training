@@ -1,3 +1,5 @@
+//In TypeScript, a union type allows a variable to hold values of multiple types. This is useful when you want to allow a variable to be of one of several types, but not necessarily all of them at once. 
+
 let score: number | string = 33
 score = 44
 score = "55"
