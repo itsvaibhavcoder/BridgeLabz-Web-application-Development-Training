@@ -15,7 +15,7 @@ scores.push(1); //Allow
 //Can be use for storing different data type values, fixed length, indexed access
 let user: [number, string] = [1,'Vaibhav'];
 //user.push(true); 
-console.log(user)
+//console.log(user)
 
 //Enum
 enum Role{
@@ -25,3 +25,4 @@ enum Role{
 }
 
 let role: Role = Role.Admin;
+console.log(role);
