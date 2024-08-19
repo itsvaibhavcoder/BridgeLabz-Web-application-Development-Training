@@ -1,28 +1,30 @@
-interface TakePhoto{
-    cameraMode: string
-    filter: string
-    burst: number
+interface TakePhoto1 {
+    cameraMode: string;
+    filter: string;
+    burst: number;
 }
 
-interface Story{
-    createStory(): void
+interface Story {
+    createStory(): void;
 }
-class Instagram implements TakePhoto{
+
+class Instagram1 implements TakePhoto1 {
     constructor(
         public cameraMode: string,
         public filter: string,
         public burst: number
-    ){}
+    ) {}
 }
 
-class Youtube implements TakePhoto, Story{
+class Youtube1 implements TakePhoto1, Story {
     constructor(
         public cameraMode: string,
         public filter: string,
-        public burst: number
-    ){}
+        public burst: number,
+        public short: string
+    ) {}
 
     createStory(): void {
-        console.log("Story was Created")
+        console.log("Story was created");
     }
 }
