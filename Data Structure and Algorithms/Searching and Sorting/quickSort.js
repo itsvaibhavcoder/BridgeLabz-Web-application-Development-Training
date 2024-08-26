@@ -17,7 +17,6 @@ function partition(arr, low, high) {
     [arr[low], arr[j]] = [arr[j], arr[low]];
     return j;
 }
-
 function quickSort(arr, low, high) {
     if (low < high) {
         let pIndex = partition(arr, low, high);
