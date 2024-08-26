@@ -32,7 +32,6 @@ function merge(arr, left, mid, right) {
         arr[k++] = rightArray[j++];
     }
 }
-
 function mergeSort(arr, left, right) {
     if (left < right) {
         let mid = Math.floor((left + right) / 2);
