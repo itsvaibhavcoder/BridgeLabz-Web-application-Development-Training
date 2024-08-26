@@ -1,4 +1,4 @@
-//For sorted array
+// Binary Search --> Works on Sorted Array
 function binarySearch(arr, key, left, right) {
     while (left <= right) {
         let mid = Math.floor(left + (right - left) / 2);
