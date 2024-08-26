@@ -2,6 +2,7 @@
 
 MVC is a software architectural pattern used for developing user interfaces. It divides an application into interconnected components.
 
+
 ## Components
 
 ### Model
