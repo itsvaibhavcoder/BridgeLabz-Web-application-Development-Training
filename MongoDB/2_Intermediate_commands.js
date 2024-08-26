@@ -6,7 +6,6 @@
 db.collection.find({ age: { $gt: 20 } }, { name: 1, city: 1, _id: 0 });
 
 //2.2. Sorting
-
 //Sort documents by age in ascending order:
 db.collection.find().sort({ age: 1 });
 
