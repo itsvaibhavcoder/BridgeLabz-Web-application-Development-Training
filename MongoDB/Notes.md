@@ -1,5 +1,4 @@
 # MongoDB Queries from Basic to Advanced
-
 ## Getting Started with MongoDB
 
 To begin working with MongoDB, follow these steps:
