@@ -1,5 +1,4 @@
 //3.1. Aggregation Pipeline
-
 //Match, group, and sort in one pipeline:
 db.collection.aggregate([
   { $match: { age: { $gt: 20 } } },
