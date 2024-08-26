@@ -1,5 +1,4 @@
 //1. Basic MongoDB Queries
-
 //1.1. Inserting Documents
 
 //Insert a single document: 
