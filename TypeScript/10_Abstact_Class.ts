@@ -10,6 +10,7 @@ abstract class TakePhoto{
     }
 }
 
+
 class FaceBook extends TakePhoto{
     constructor(
         public cameraMode: string,
