@@ -8,6 +8,7 @@ export async function deleteCustomerController(req: any, res: any) {
       if (!customerId) {
         return res.status(400).json({ message: 'Customer ID is required' });
       }
+        
   
       // Attempt to delete the customer by ID
       const result = await db.collection('customers').deleteOne({ _id: new ObjectId(customerId) });
