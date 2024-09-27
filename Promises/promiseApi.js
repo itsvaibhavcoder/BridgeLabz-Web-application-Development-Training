@@ -4,6 +4,7 @@
 // Promise.race()
 // Promise.any()
 
+
 //Promise.all()
 //A promise is a placeholder for a value that's going to be available sometime later. The promise helps handle asynchronous operations. JavaScript provides a helper function Promise.all(promisesArrayOrIterable) to handle multiple promises at once, in parallel, and get the results in a single aggregate array.
 
