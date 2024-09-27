@@ -47,6 +47,7 @@ Promise.all([p1,p2,p3]).then((result)=>{
 //     }, 2000);
 //   });
 
+
 Promise.all([p1,p2,p3]).then((result)=>{
   console.log(result);
 }).catch(err=>console.log(err));
